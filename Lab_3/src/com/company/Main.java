@@ -7,7 +7,9 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> defExamination= new ArrayList<String>();
+        System.out.print("Kirrill_Andriets lab_3");
+
+        List<String> defExamination= new ArrayList<>();
         defExamination.add("Operation System");
         defExamination.add("Exam1");
         defExamination.add("Exam2");
@@ -16,7 +18,7 @@ public class Main {
         Gradebook ivan = new Gradebook("Ivan","Ivanko","Ivanovich",1,defExamination,5);
         Gradebook vasya = new Gradebook("Vasya","Vasyko","Vasykovich",2,defExamination,3);
         Gradebook kolya = new Gradebook("Kolya","Kolenko","Nikolayonovich",1,defExamination,2);
-        Gradebook pots = new Gradebook("noname","secret","incognito",10,defExamination,5);
+        Gradebook pots = new Gradebook("noname","secret","incognito",3,defExamination,5);
         Gradebook ira = new Gradebook("ira","kovalenko","Vasykovech",2,defExamination,5);
 
         ArrayList<Gradebook> gradebooksList= new ArrayList<Gradebook>();
@@ -33,16 +35,17 @@ public class Main {
         }
 
         System.out.println(" ");
+        String nameStudent = "Vasya";
         for (Gradebook student:gradebooksList){
-            if (student.getCurseNumber() == 2  && student.getName() == "Vasya"){
-                System.out.print("Vasya have exam ");
+            if (student.getCurseNumber() == 2  && student.getName() == nameStudent){
+                System.out.print( nameStudent + " have exam ");
                 System.out.print(" - (");
                 for (String exam: student.getListOfExamination()){
                     System.out.print(exam+",");
                 }
-                System.out.print("\b)");
+                System.out.println("\b)");
             }
         }
-
+        //ReadXML.main();
     }
 }
